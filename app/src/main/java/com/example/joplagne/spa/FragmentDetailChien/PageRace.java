@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.joplagne.spa.Doggo;
+import com.example.joplagne.spa.Code;
 import com.example.joplagne.spa.R;
 
 /**
@@ -19,7 +19,7 @@ public class PageRace extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        Doggo chien = (Doggo) getActivity().getIntent().getSerializableExtra("dog");
+        Code chien = (Code) getActivity().getIntent().getSerializableExtra("dog");
         View view = inflater.inflate(R.layout.page_race, container, false);
         TextView race = (TextView) view.findViewById(R.id.race);
         race.setText(chien.getRace());

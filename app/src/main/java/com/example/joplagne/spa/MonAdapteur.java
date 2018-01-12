@@ -8,15 +8,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * Created by joplagne on 29/09/17.
@@ -24,7 +21,7 @@ import java.util.Random;
 
 public class MonAdapteur extends RecyclerView.Adapter<MonAdapteur.ViewHolder> {
 
-    private static ArrayList<Doggo> lesDoggos;
+    private static ArrayList<Code> lesCodes;
     private static Context context;
     private int lastPosition = -1;
 
@@ -39,7 +36,7 @@ public class MonAdapteur extends RecyclerView.Adapter<MonAdapteur.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Doggo dog = lesDoggos.get(position);
+        Code dog = lesCodes.get(position);
         holder.nomDoggo.setText(dog.getNom());
         holder.raceDoggo.setText(dog.getRace());
         holder.layout.setBackgroundResource(R.drawable.corners_arrounded);
@@ -60,7 +57,7 @@ public class MonAdapteur extends RecyclerView.Adapter<MonAdapteur.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return lesDoggos.size();
+        return lesCodes.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -84,7 +81,7 @@ public class MonAdapteur extends RecyclerView.Adapter<MonAdapteur.ViewHolder> {
 
                     // check if item still exists
                     if(pos != RecyclerView.NO_POSITION){
-                        Doggo chien = lesDoggos.get(pos);
+                        Code chien = lesCodes.get(pos);
                         Intent intent = new Intent();
                         intent.setClass(context, DetailActivity.class);
                         intent.putExtra("dog", chien);
@@ -96,8 +93,8 @@ public class MonAdapteur extends RecyclerView.Adapter<MonAdapteur.ViewHolder> {
     }
 
 
-    public MonAdapteur(ArrayList<Doggo> listeDeDoggos, Context context){
-        lesDoggos=listeDeDoggos;
+    public MonAdapteur(ArrayList<Code> listeDeCodes, Context context){
+        lesCodes = listeDeCodes;
         this.context = context;
     }
 

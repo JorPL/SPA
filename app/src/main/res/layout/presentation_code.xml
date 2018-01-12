@@ -52,7 +52,8 @@
         android:drawableStart="@drawable/poids"
         android:textColor="@color/noir"
         android:textSize="18sp"
-        tools:text="@string/Poids" />
+        tools:text="@string/Poids"
+        android:drawableLeft="@drawable/poids" />
 
     <RatingBar
         android:id="@+id/ratingBar"

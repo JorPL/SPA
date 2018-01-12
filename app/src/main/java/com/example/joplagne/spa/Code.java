@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by joplagne on 29/09/17.
  */
 
-public class Doggo implements Serializable{
+public class Code implements Serializable{
 
     private String nom;
     private String race;
@@ -14,7 +14,7 @@ public class Doggo implements Serializable{
     private int genre;
     private int gentillesse;
 
-    public Doggo(String nom, String race, String poids, int gentillesse, int genre) {
+    public Code(String nom, String race, String poids, int gentillesse, int genre) {
         this.nom = nom;
         this.race = race;
         this.poids = poids;
