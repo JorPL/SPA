@@ -1,6 +1,9 @@
 package com.example.joplagne.spa;
 
+import java.awt.Image;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by joplagne on 29/09/17.
@@ -8,58 +11,58 @@ import java.io.Serializable;
 
 public class Code implements Serializable{
 
-    private String nom;
-    private String race;
-    private String poids;
-    private int genre;
-    private int gentillesse;
+    private Image image;
+    private String type;
+    private Date date;
+    private String code;
+    private ArrayList<String> informations = new ArrayList<>();
 
-    public Code(String nom, String race, String poids, int gentillesse, int genre) {
-        this.nom = nom;
-        this.race = race;
-        this.poids = poids;
-        this.gentillesse = gentillesse;
-        this.genre = genre;
+    public Code(Image image, String type, Date date, String code, ArrayList<String> informations) {
+        this.image = image;
+        this.type = type;
+        this.date = date;
+        this.code = code;
+        this.informations = informations;
     }
 
-    public String getNom() {
-        return nom;
+    public Image getImage() {
+        return image;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setImage(Image image) {
+        this.image = image;
     }
 
-    public String getRace() {
-        return race;
+    public String getType() {
+        return type;
     }
 
-    public void setRace(String race) {
-        this.race = race;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getPoids() {
-        return poids;
+    public Date getDate() {
+        return date;
     }
 
-    public void setPoids(String poids) {
-        this.poids = poids;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public int getGenre() {
-        return genre;
+    public String getCode() {
+        return code;
     }
 
-    public void setGenre(int genre) {
-        this.genre = genre;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public int getGentillesse() {
-        return gentillesse;
+    public ArrayList<String> getInformations() {
+        return informations;
     }
 
-    public void setGentillesse(int gentillesse) {
-        this.gentillesse = gentillesse;
+    public void setInformations(ArrayList<String> informations) {
+        this.informations = informations;
     }
 
     /*public String getBackgroundGentillesse(int gentillesse){
