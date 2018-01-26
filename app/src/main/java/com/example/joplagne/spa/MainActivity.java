@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         final ArrayList<Code> listeDeCodes = new ArrayList<Code>();
         final Random rand = new Random();
         for(int i=0; i<20; i++){
-            listeDeCodes.add(new Code("MoonMoon", "Berger allemand", new java.text.DecimalFormat("0.##").format(rand.nextDouble() * 30) + " kg", rand.nextInt(4), 0));
+            listeDeCodes.add(new Code(null, "BARCODE", null, "", null));
         }
 
         mRecyclerView = (RecyclerView) findViewById(R.id.liste_doggo);
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         bouton_ajouter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listeDeCodes.add(new Code("Nouveau", "chiot", String.valueOf(rand.nextInt(20)) + " kg", rand.nextInt(4), 0));
+                listeDeCodes.add(new Code(null, "DATAMATRIX", null, "", null));
                 mAdapter.notifyDataSetChanged();
             }
         });

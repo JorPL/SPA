@@ -1,6 +1,8 @@
 package com.example.joplagne.spa;
 
-import java.awt.Image;
+
+import android.graphics.Bitmap;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,13 +13,13 @@ import java.util.Date;
 
 public class Code implements Serializable{
 
-    private Image image;
+    private Bitmap image;
     private String type;
     private Date date;
     private String code;
     private ArrayList<String> informations = new ArrayList<>();
 
-    public Code(Image image, String type, Date date, String code, ArrayList<String> informations) {
+    public Code(Bitmap image, String type, Date date, String code, ArrayList<String> informations) {
         this.image = image;
         this.type = type;
         this.date = date;
@@ -25,11 +27,11 @@ public class Code implements Serializable{
         this.informations = informations;
     }
 
-    public Image getImage() {
+    public Bitmap getImage() {
         return image;
     }
 
-    public void setImage(Image image) {
+    public void setImage(Bitmap image) {
         this.image = image;
     }
 

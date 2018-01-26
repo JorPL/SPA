@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -36,12 +37,14 @@ public class MonAdapteur extends RecyclerView.Adapter<MonAdapteur.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Code dog = lesCodes.get(position);
-        holder.nomDoggo.setText(dog.getNom());
-        holder.raceDoggo.setText(dog.getRace());
+        Code code = lesCodes.get(position);
+
+        holder.textCode.setText(code.getCode());
+        holder.typeCode.setText(code.getType());
+        holder.imageCode.setImageBitmap(code.getImage());
+
         holder.layout.setBackgroundResource(R.drawable.corners_arrounded);
-        GradientDrawable tmp = (GradientDrawable) holder.layout.getBackground();
-        tmp.setColor(Color.parseColor(context.getResources().getString(getBackgroundGentillesse(dog.getGentillesse()))));
+
         setAnimation(holder.itemView, position);
     }
 
@@ -62,17 +65,19 @@ public class MonAdapteur extends RecyclerView.Adapter<MonAdapteur.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView nomDoggo;
-        public TextView raceDoggo;
+        public ImageView imageCode;
+        public TextView typeCode;
+        public TextView textCode;
         public FrameLayout layout;
 
         public ViewHolder(View view) {
             super(view);
-            nomDoggo = ((TextView) itemView.findViewById(R.id.nomDog));
 
-            raceDoggo = ((TextView) itemView.findViewById(R.id.raceDog));
+            imageCode = itemView.findViewById(R.id.imageCode);
+            typeCode =  itemView.findViewById(R.id.typeCode);
+            textCode = itemView.findViewById(R.id.textCode);
 
-            layout = (FrameLayout) itemView.findViewById(R.id.layout_item);
+            layout = itemView.findViewById(R.id.layout_item);
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
@@ -81,10 +86,10 @@ public class MonAdapteur extends RecyclerView.Adapter<MonAdapteur.ViewHolder> {
 
                     // check if item still exists
                     if(pos != RecyclerView.NO_POSITION){
-                        Code chien = lesCodes.get(pos);
+                        Code code = lesCodes.get(pos);
                         Intent intent = new Intent();
                         intent.setClass(context, DetailActivity.class);
-                        intent.putExtra("dog", chien);
+                        intent.putExtra("dog", code);
                         context.startActivity(intent);
                     }
                 }
@@ -97,28 +102,5 @@ public class MonAdapteur extends RecyclerView.Adapter<MonAdapteur.ViewHolder> {
         lesCodes = listeDeCodes;
         this.context = context;
     }
-
-    public int getBackgroundGentillesse(int gentillesse){
-        int result;
-        switch (gentillesse){
-            case 0:
-                result = R.color.lvl1;
-                break;
-            case 1:
-                result = R.color.lvl2;
-                break;
-            case 2:
-                result = R.color.lvl3;
-                break;
-            case 3:
-                result = R.color.lvl4;
-                break;
-            default:
-                result = R.color.blanc;
-                break;
-        }
-        return result;
-    }
-
 
 }

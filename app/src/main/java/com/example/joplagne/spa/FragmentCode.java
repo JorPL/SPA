@@ -14,23 +14,24 @@ import android.widget.TextView;
 
 public class FragmentCode extends Fragment{
 
-    private TextView nom, race, genre, poids;
-    private RatingBar gentillesse;
+    private TextView image, type, date, informations, code;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.presentation_code, container, false);
-        nom = view.findViewById(R.id.nom);
-        race = view.findViewById(R.id.race);
-        genre = view.findViewById(R.id.genre);
-        poids = view.findViewById(R.id.poids);
-        gentillesse = view.findViewById(R.id.ratingBar);
+        image = view.findViewById(R.id.nom);
+        type = view.findViewById(R.id.race);
+        date = view.findViewById(R.id.genre);
+        code = view.findViewById(R.id.poids);
+        informations = view.findViewById(R.id.poids);
+
         Code code = (Code) getActivity().getIntent().getExtras().get("code");
-        nom.setText(code.getNom());
-        race.setText(code.getRace());
-        genre.setText(String.valueOf(code.getGenre()));
-        poids.setText(code.getPoids());
-        gentillesse.setRating(code.getGentillesse());
+        //        gentillesse.set(code.getImage());
+
+        image.setText(code.getCode());
+        type.setText(code.getType());
+        date.setText(String.valueOf(code.getDate()));
+        informations.setText(code.getCode());
         return view;
     }
 

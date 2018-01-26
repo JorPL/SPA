@@ -17,8 +17,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <ImageView
+            android:id="@+id/imageCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/corners_arrounded" />
+
         <TextView
-            android:id="@+id/nomDog"
+            android:id="@+id/typeCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -28,7 +35,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/raceDog"
+            android:id="@+id/textCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

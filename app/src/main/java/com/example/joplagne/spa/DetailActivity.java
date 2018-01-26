@@ -1,21 +1,18 @@
 package com.example.joplagne.spa;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.example.joplagne.spa.FragmentDetailChien.AdapteurPage;
-import com.example.joplagne.spa.FragmentDetailChien.PageGenre;
-import com.example.joplagne.spa.FragmentDetailChien.PageGentillesse;
-import com.example.joplagne.spa.FragmentDetailChien.PageNom;
-import com.example.joplagne.spa.FragmentDetailChien.PagePoids;
-import com.example.joplagne.spa.FragmentDetailChien.PageRace;
+import com.example.joplagne.spa.FragmentDetailCode.AdapteurPage;
+import com.example.joplagne.spa.FragmentDetailCode.PageGenre;
+import com.example.joplagne.spa.FragmentDetailCode.PageGentillesse;
+import com.example.joplagne.spa.FragmentDetailCode.PageNom;
+import com.example.joplagne.spa.FragmentDetailCode.PagePoids;
+import com.example.joplagne.spa.FragmentDetailCode.PageRace;
 
 import java.util.List;
 import java.util.Vector;
