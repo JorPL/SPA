@@ -38,11 +38,7 @@ public class DetailActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         List fragments = new Vector();
-        fragments.add(Fragment.instantiate(this, PageNom.class.getName()));
-        fragments.add(Fragment.instantiate(this, PageRace.class.getName()));
-        fragments.add(Fragment.instantiate(this, PageGenre.class.getName()));
-        fragments.add(Fragment.instantiate(this, PagePoids.class.getName()));
-        fragments.add(Fragment.instantiate(this, PageGentillesse.class.getName()));
+        fragments.add(Fragment.instantiate(this, FragmentCode.class.getName()));
 
         this.adapteur = new AdapteurPage(super.getSupportFragmentManager(), fragments);
         ViewPager pager = (ViewPager) super.findViewById(R.id.viewpager);

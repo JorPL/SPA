@@ -1,10 +1,11 @@
 package com.example.joplagne.spa;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -14,7 +15,8 @@ import android.widget.TextView;
 
 public class FragmentCode extends Fragment{
 
-    private TextView img, type, date, informations, code;
+    private TextView type, date, informations, code;
+    private ImageView img;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -27,7 +29,8 @@ public class FragmentCode extends Fragment{
 
         Code code = (Code) getActivity().getIntent().getExtras().get("code");
 
-        img.setText(code.getCode());
+        if (code.getImage() != null)
+            img.setImageBitmap(code.getImage());
         type.setText(code.getType());
         date.setText(String.valueOf(code.getDate()));
         informations.setText(code.getCode());
