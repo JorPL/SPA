@@ -35,6 +35,7 @@
             android:layout_columnWeight="1"
             android:layout_marginTop="37dp"
             android:padding="10dp"
+            android:text="@string/type"
             android:textColor="@color/noir"
             android:textSize="18sp"
             tools:text="@string/type" />
@@ -49,9 +50,10 @@
             android:layout_marginTop="37dp"
             android:autoText="false"
             android:padding="10dp"
+            android:text="@string/date"
             android:textColor="@color/noir"
-            android:textSize="18sp"
 
+            android:textSize="18sp"
             tools:text="@string/date" />
 
         <TextView
@@ -64,6 +66,7 @@
             android:layout_marginTop="37dp"
             android:autoText="false"
             android:padding="10dp"
+            android:text="@string/code"
             android:textColor="@color/noir"
             android:textSize="18sp"
             tools:text="@string/code" />
@@ -78,9 +81,10 @@
             android:layout_marginTop="37dp"
             android:autoText="false"
             android:padding="10dp"
+            android:text="@string/infos"
             android:textColor="@color/noir"
-            android:textSize="18sp"
 
+            android:textSize="18sp"
             tools:text="@string/infos" />
     </GridLayout>
 
@@ -94,7 +98,7 @@
         android:layout_marginStart="23dp"
         android:layout_toEndOf="@+id/image"
         android:layout_toRightOf="@+id/image"
-        android:text="Button"
+        android:text="@string/annuler"
         tools:text="@string/annuler" />
 
     <Button
@@ -107,7 +111,7 @@
         android:layout_marginRight="29dp"
         android:layout_toLeftOf="@+id/image"
         android:layout_toStartOf="@+id/image"
-        android:text="Button"
+        android:text="@string/valider"
         tools:text="@string/valider" />
 
 </RelativeLayout>
