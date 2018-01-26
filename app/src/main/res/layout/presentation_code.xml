@@ -6,63 +6,108 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/nom"
+    <ImageView
+        android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:textColor="@color/noir"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        tools:text="@string/nom" />
+        android:paddingTop="100dp"
+        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/race"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/nom"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
-        android:autoText="false"
-        android:textColor="@color/noir"
-        android:textSize="18sp"
-        android:textStyle="italic"
-        tools:text="@string/Race" />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="201dp"
+        android:columnCount="2"
+        android:paddingTop="150dp">
 
-    <TextView
-        android:id="@+id/genre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/race"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
-        android:textColor="@color/noir"
-        android:textSize="18sp"
-        tools:text="@string/Genre" />
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/genre"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="false"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="37dp"
+            android:padding="10dp"
+            android:textColor="@color/noir"
+            android:textSize="18sp"
+            tools:text="@string/type" />
 
-    <TextView
-        android:id="@+id/poids"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/genre"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="false"
-        android:layout_marginTop="37dp"
-        android:drawableStart="@drawable/poids"
-        android:textColor="@color/noir"
-        android:textSize="18sp"
-        tools:text="@string/Poids"
-        android:drawableLeft="@drawable/poids" />
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nom"
+            android:layout_centerHorizontal="true"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="37dp"
+            android:autoText="false"
+            android:padding="10dp"
+            android:textColor="@color/noir"
+            android:textSize="18sp"
 
-    <RatingBar
-        android:id="@+id/ratingBar"
+            tools:text="@string/date" />
+
+        <TextView
+            android:id="@+id/code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nom"
+            android:layout_centerHorizontal="true"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="37dp"
+            android:autoText="false"
+            android:padding="10dp"
+            android:textColor="@color/noir"
+            android:textSize="18sp"
+            tools:text="@string/code" />
+
+        <TextView
+            android:id="@+id/infos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nom"
+            android:layout_centerHorizontal="true"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="37dp"
+            android:autoText="false"
+            android:padding="10dp"
+            android:textColor="@color/noir"
+            android:textSize="18sp"
+
+            tools:text="@string/infos" />
+    </GridLayout>
+
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:numStars="3"
-        android:visibility="visible" />
+        android:layout_marginBottom="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_toEndOf="@+id/image"
+        android:layout_toRightOf="@+id/image"
+        android:text="Button"
+        tools:text="@string/annuler" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button"
+        android:layout_alignBottom="@+id/button"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:layout_toLeftOf="@+id/image"
+        android:layout_toStartOf="@+id/image"
+        android:text="Button"
+        tools:text="@string/valider" />
 
 </RelativeLayout>

@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">SPA</string>
-    <string name="Gentillesse">gentillesse</string>
-    <string name="Poids">poids</string>
-    <string name="Genre">genre</string>
-    <string name="Race">race</string>
-    <string name="nom">nom</string>
+    <string name="type">type</string>
+    <string name="code">code</string>
+    <string name="date">date</string>
+    <string name="infos">infos</string>
+    <string name="valider">Valider</string>
+    <string name="annuler">Annuler</string>
+
+    <item name="img" type="id">img</item>
 </resources>

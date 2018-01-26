@@ -2,7 +2,6 @@ package com.example.joplagne.spa;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -36,12 +35,11 @@ public class MonAdapteur extends RecyclerView.Adapter<MonAdapteur.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Code dog = lesCodes.get(position);
-        holder.nomDoggo.setText(dog.getNom());
-        holder.raceDoggo.setText(dog.getRace());
+        Code code = lesCodes.get(position);
+        holder.leCode.setText(code.getCode());
         holder.layout.setBackgroundResource(R.drawable.corners_arrounded);
         GradientDrawable tmp = (GradientDrawable) holder.layout.getBackground();
-        tmp.setColor(Color.parseColor(context.getResources().getString(getBackgroundGentillesse(dog.getGentillesse()))));
+//        tmp.setColor(Color.parseColor(context.getResources().getString(getBackgroundGentillesse(code.getType()))));
         setAnimation(holder.itemView, position);
     }
 
@@ -62,15 +60,15 @@ public class MonAdapteur extends RecyclerView.Adapter<MonAdapteur.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView nomDoggo;
-        public TextView raceDoggo;
+        public TextView leCode;
+        public TextView typeDeCode;
         public FrameLayout layout;
 
         public ViewHolder(View view) {
             super(view);
-            nomDoggo = ((TextView) itemView.findViewById(R.id.nomDog));
+            leCode = ((TextView) itemView.findViewById(R.id.leCode));
 
-            raceDoggo = ((TextView) itemView.findViewById(R.id.raceDog));
+            typeDeCode = ((TextView) itemView.findViewById(R.id.typeDeCode));
 
             layout = (FrameLayout) itemView.findViewById(R.id.layout_item);
             itemView.setOnClickListener(new View.OnClickListener(){
@@ -97,7 +95,7 @@ public class MonAdapteur extends RecyclerView.Adapter<MonAdapteur.ViewHolder> {
         lesCodes = listeDeCodes;
         this.context = context;
     }
-
+/*
     public int getBackgroundGentillesse(int gentillesse){
         int result;
         switch (gentillesse){
@@ -118,7 +116,7 @@ public class MonAdapteur extends RecyclerView.Adapter<MonAdapteur.ViewHolder> {
                 break;
         }
         return result;
-    }
+    }*/
 
 
 }

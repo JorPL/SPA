@@ -1,4 +1,4 @@
-package com.example.joplagne.spa.FragmentDetailChien;
+package com.example.joplagne.spa.FragmentDetailCode;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,14 +15,14 @@ import com.example.joplagne.spa.R;
  * Created by jorda on 06/10/2017.
  */
 
-public class PagePoids extends Fragment {
-
+public class PageNom extends Fragment {
+    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         Code chien = (Code) getActivity().getIntent().getSerializableExtra("dog");
-        View view = inflater.inflate(R.layout.page_poids, container, false);
-        TextView poids = (TextView) view.findViewById(R.id.poids);
-        poids.setText(chien.getPoids());
+        View view = inflater.inflate(R.layout.page_nom, container, false);
+        TextView nom = (TextView) view.findViewById(R.id.nom);
+        //nom.setText(chien.getNom());
         return view;
     }
 }

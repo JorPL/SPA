@@ -1,4 +1,4 @@
-package com.example.joplagne.spa.FragmentDetailChien;
+package com.example.joplagne.spa.FragmentDetailCode;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

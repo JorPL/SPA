@@ -1,4 +1,4 @@
-package com.example.joplagne.spa.FragmentDetailChien;
+package com.example.joplagne.spa.FragmentDetailCode;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,18 +15,14 @@ import com.example.joplagne.spa.R;
  * Created by jorda on 06/10/2017.
  */
 
-public class PageGenre extends Fragment {
+public class PageRace extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        Code chien = (Code) getActivity().getIntent().getSerializableExtra("dog");
-        View view = inflater.inflate(R.layout.page_genre, container, false);
-        TextView genre = (TextView) view.findViewById(R.id.genre);
-        if (chien.getGenre() == 0) {
-            genre.setText("Male");
-        }else{
-            genre.setText("Femelle");
-        }
+        Code code = (Code) getActivity().getIntent().getSerializableExtra("dog");
+        View view = inflater.inflate(R.layout.page_race, container, false);
+        TextView race = (TextView) view.findViewById(R.id.race);
+        race.setText(code.getType());
         return view;
     }
 }
